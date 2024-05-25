@@ -34,9 +34,15 @@ def find_min_coins(amount, coins=COINS):
 
 
 # Вимірювання часу виконання
-greedy_time = timeit.timeit(
-    'find_coins_greedy(1000)', globals=globals(), number=100)
+greedy_time = timeit.timeit('find_coins_greedy(1000)', globals=globals(), number=100)
 dp_time = timeit.timeit('find_min_coins(1000)', globals=globals(), number=100)
 
+# Вывод результатов
+amount = 1000
+greedy_result = find_coins_greedy(amount)
+dp_result = find_min_coins(amount)
+
 print(f"Час виконання жадібного алгоритму: {greedy_time} секунд")
+print(f"Результат жадібного алгоритму для {amount} копійок: {greedy_result}")
 print(f"Час виконання алгоритму динамічного програмування: {dp_time} секунд")
+print(f"Результат алгоритму динамічного програмування для {amount} копійок: {dp_result}")
